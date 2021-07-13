@@ -29,7 +29,7 @@ class FmTransformers(LanguageModels):
             if top_k is None:
                 top_k = 5
 
-            self.model = pipeline("fill-mask", model=model_path, device=device, top_k=top_k)
+            self.model = pipeline("fill-mask", model=model_path, device=device, topk=top_k)
             logging.getLogger('transformers.' + 'modeling_utils').setLevel(orig_log_level)
 
     def to(self, device):
